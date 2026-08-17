@@ -4,7 +4,6 @@ package speedfast;
  * Clase base del sistema de pedidos.
  * Representa un pedido genérico de SpeedFast.
  */
-
 public class Pedido {
 
     private int idPedido;

@@ -14,34 +14,35 @@ Implementar una jerarquía de clases para representar pedidos de comida, encomie
 
 ```text
 .
-├── build.xml
-├── manifest.mf
-├── nbproject/
+├── .idea/
 ├── README.md
+├── SpeedFast.iml
 └── src/
-    └── speedfast/
-        ├── Main.java
-        ├── Pedido.java
-        ├── PedidoComida.java
-        ├── PedidoEncomienda.java
-        └── PedidoExpress.java
+    └── main/
+        └── java/
+            └── speedfast/
+                ├── Main.java
+                ├── Pedido.java
+                ├── PedidoComida.java
+                ├── PedidoEncomienda.java
+                └── PedidoExpress.java
 ```
 
 ## 🛠️ Software necesario
 
-- **Java Development Kit (JDK) 25**: configurado actualmente en el proyecto NetBeans.
-- **Apache NetBeans**: para abrir, compilar y ejecutar el proyecto.
-- **Apache Ant**: incluido o configurado mediante NetBeans para construir el proyecto.
+- **Java Development Kit (JDK) 17 LTS**: requerido para compilar y ejecutar el proyecto.
+- **IntelliJ IDEA Community o Ultimate**: entorno de desarrollo utilizado para abrir y ejecutar el proyecto.
 
 ## 🚀 Pasos para ejecutar el proyecto
 
-### Desde Apache NetBeans
+### Desde IntelliJ IDEA
 
-1. Abrir Apache NetBeans.
-2. Seleccionar **File > Open Project** y elegir la carpeta `SpeedFast`.
-3. Verificar que el proyecto use el JDK configurado.
-4. Ejecutar el proyecto con **Run Project** o la tecla `F6`.
-5. Revisar la consola para observar la asignación de repartidores.
+1. Abrir IntelliJ IDEA.
+2. Seleccionar **Open** y elegir la carpeta `SpeedFast`.
+3. Confirmar que el SDK del proyecto sea **JDK 17** en **File > Project Structure > Project**.
+4. Abrir `src/main/java/speedfast/Main.java`.
+5. Ejecutar el método `main` con el botón de ejecución o `Shift + F10`.
+6. Revisar la consola para observar la asignación de repartidores.
 
 ### Desde la terminal
 
@@ -49,13 +50,13 @@ Implementar una jerarquía de clases para representar pedidos de comida, encomie
 2. Compilar las clases Java:
 
 ```bash
-javac -encoding UTF-8 -d build/classes src/speedfast/*.java
+javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
 ```
 
 3. Ejecutar la clase principal:
 
 ```bash
-java -cp build/classes speedfast.Main
+java -cp out speedfast.Main
 ```
 
 La salida mostrará la asignación de pedidos de comida, encomienda y compra express, junto con las demostraciones de sobrescritura, sobrecarga y polimorfismo.
