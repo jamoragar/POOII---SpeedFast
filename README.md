@@ -10,6 +10,19 @@ Proyecto de trabajo semanal para la asignatura de **Desarrollo Orientado a Objet
 
 Implementar una jerarquía de clases para representar pedidos de comida, encomiendas y compras express, aplicando polimorfismo para asignar repartidores según las necesidades de cada servicio.
 
+## 🧩 Diseño orientado a objetos
+
+- **Herencia**: `PedidoComida`, `PedidoEncomienda` y `PedidoExpress` extienden la clase base `Pedido`.
+- **Sobrescritura**: cada tipo de pedido redefine la asignación según sus propias reglas.
+- **Sobrecarga**: `Pedido` ofrece `asignarRepartidor()`, `asignarRepartidor(String)`, `asignarRepartidor(Repartidor)` y una variante para varios candidatos.
+- **Polimorfismo**: `Main` almacena los pedidos derivados en un arreglo `Pedido[]` y ejecuta sus comportamientos sin convertirlos a tipos concretos.
+
+Las decisiones de asignación validan datos reales:
+
+- Comida exige disponibilidad inmediata y mochila térmica.
+- Encomienda exige embalaje adecuado y capacidad suficiente de peso y dimensiones.
+- Express compara las distancias y selecciona al repartidor disponible más cercano.
+
 ## 📁 Estructura
 
 ```text
@@ -25,7 +38,8 @@ Implementar una jerarquía de clases para representar pedidos de comida, encomie
                 ├── Pedido.java
                 ├── PedidoComida.java
                 ├── PedidoEncomienda.java
-                └── PedidoExpress.java
+                ├── PedidoExpress.java
+                └── Repartidor.java
 ```
 
 ## 🛠️ Software necesario
@@ -59,7 +73,7 @@ javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
 java -cp out speedfast.Main
 ```
 
-La salida mostrará la asignación de pedidos de comida, encomienda y compra express, junto con las demostraciones de sobrescritura, sobrecarga y polimorfismo.
+La salida muestra sobrescritura, sobrecarga, sustitución polimórfica, asignaciones aceptadas, rechazos justificados y la selección efectiva por cercanía.
 
 ---
 

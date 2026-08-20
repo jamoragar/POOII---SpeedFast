@@ -8,60 +8,99 @@ public class Main {
         System.out.println("       SISTEMA SPEEDFAST        ");
         System.out.println("================================");
 
-        // Objetos específicos de cada clase hija.
-        PedidoComida comida =
-                new PedidoComida(1, "Av. Siempre Viva 123");
+        // Sustitución: cada objeto derivado se almacena como Pedido.
+        Pedido[] pedidos = {
+            new PedidoComida(1, "Av. Siempre Viva 123"),
+            new PedidoEncomienda(2, "Calle Los Alerces 456",
+                    8.0, 30.0, 25.0, 40.0, true),
+            new PedidoExpress(3, "Pasaje El Molino 789")
+        };
 
-        PedidoEncomienda encomienda =
-                new PedidoEncomienda(2, "Calle Los Alerces 456");
+        System.out.println("\n--- SOBRESCRITURA SIN PARÁMETROS ---\n");
 
-        PedidoExpress express =
-                new PedidoExpress(3, "Pasaje El Molino 789");
+        // La misma llamada ejecuta el método del tipo real de cada objeto.
+        for (Pedido pedido : pedidos) {
+            pedido.asignarRepartidor();
+            System.out.println();
+        }
 
-        System.out.println("\n--- PRUEBA DE SOBRESCRITURA ---\n");
+        System.out.println("--- SOBRECARGA CON STRING ---\n");
 
-        comida.asignarRepartidor();
+        String[] nombres = {"Juan Pérez", "Camila Soto", "Luis Díaz"};
 
-        System.out.println("\n-------------------------------\n");
+        for (int i = 0; i < pedidos.length; i++) {
+            pedidos[i].asignarRepartidor(nombres[i]);
+            System.out.println();
+        }
 
-        encomienda.asignarRepartidor();
+        System.out.println("--- POLIMORFISMO CON REPARTIDOR ---\n");
 
-        System.out.println("\n-------------------------------\n");
+        Repartidor[] candidatosAptos = {
+            new Repartidor("Juan Pérez", true, true,
+                    15.0, 60.0, 50.0, 60.0, 4.5),
+            new Repartidor("Camila Soto", true, false,
+                    20.0, 50.0, 45.0, 70.0, 3.0),
+            new Repartidor("Luis Díaz", true, true,
+                    10.0, 40.0, 40.0, 50.0, 2.4)
+        };
 
-        express.asignarRepartidor();
+        for (int i = 0; i < pedidos.length; i++) {
+            pedidos[i].asignarRepartidor(candidatosAptos[i]);
+            System.out.println();
+        }
 
-        System.out.println("\n--- PRUEBA DE SOBRECARGA ---\n");
+        System.out.println("--- VALIDACIONES RECHAZADAS ---\n");
 
-        comida.asignarRepartidor("Juan Pérez");
-
+        Repartidor sinMochila = new Repartidor("Pedro Rojas", true, false,
+                12.0, 50.0, 50.0, 50.0, 1.0);
+        pedidos[0].asignarRepartidor(sinMochila);
         System.out.println();
 
-        encomienda.asignarRepartidor("Camila Soto");
-
+        Repartidor comidaNoDisponible = new Repartidor("Carlos Vega",
+                false, true, 12.0, 50.0, 50.0, 50.0, 0.8);
+        pedidos[0].asignarRepartidor(comidaNoDisponible);
         System.out.println();
 
-        express.asignarRepartidor("Luis Díaz");
-
-        System.out.println("\n--- PRUEBA DE POLIMORFISMO ---\n");
-
-        // La referencia es de tipo Pedido,
-        // pero el objeto real pertenece a una clase hija.
-        Pedido pedido1 =
-                new PedidoComida(4, "Av. Los Pinos 321");
-
-        Pedido pedido2 =
-                new PedidoEncomienda(5, "Calle Central 654");
-
-        Pedido pedido3 =
-                new PedidoExpress(6, "Av. El Bosque 987");
-
-        pedido1.asignarRepartidor();
+        Repartidor sinCapacidad = new Repartidor("Ana Silva", true, true,
+                5.0, 20.0, 20.0, 30.0, 2.0);
+        pedidos[1].asignarRepartidor(sinCapacidad);
         System.out.println();
 
-        pedido2.asignarRepartidor();
+        Repartidor sinEspacio = new Repartidor("José Araya", true, true,
+                20.0, 20.0, 20.0, 30.0, 2.5);
+        pedidos[1].asignarRepartidor(sinEspacio);
         System.out.println();
 
-        pedido3.asignarRepartidor();
+        Pedido encomiendaMalEmbalada = new PedidoEncomienda(4,
+                "Calle Central 654", 3.0, 20.0, 20.0, 20.0, false);
+        encomiendaMalEmbalada.asignarRepartidor(candidatosAptos[1]);
+        System.out.println();
+
+        System.out.println("--- EXPRESS: SELECCIÓN POR CERCANÍA ---\n");
+
+        // El más cercano está no disponible; debe elegir a Luis (1.7 km),
+        // aunque no es el primer candidato del arreglo.
+        Repartidor[] candidatosExpress = {
+            new Repartidor("María Torres", true, true,
+                    10.0, 40.0, 40.0, 50.0, 8.4),
+            new Repartidor("Diego Muñoz", false, true,
+                    10.0, 40.0, 40.0, 50.0, 0.5),
+            new Repartidor("Luis Díaz", true, true,
+                    10.0, 40.0, 40.0, 50.0, 1.7),
+            new Repartidor("Sofía Castro", true, false,
+                    10.0, 40.0, 40.0, 50.0, 3.2)
+        };
+        pedidos[2].asignarRepartidor(candidatosExpress);
+
+        System.out.println("\n--- EXPRESS: SIN DISPONIBILIDAD ---\n");
+
+        Repartidor[] candidatosNoDisponibles = {
+            new Repartidor("Diego Muñoz", false, true,
+                    10.0, 40.0, 40.0, 50.0, 0.5),
+            new Repartidor("Laura Vidal", false, true,
+                    10.0, 40.0, 40.0, 50.0, 1.2)
+        };
+        pedidos[2].asignarRepartidor(candidatosNoDisponibles);
 
         System.out.println("\n================================");
         System.out.println("        FIN DEL PROGRAMA         ");

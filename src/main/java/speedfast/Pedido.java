@@ -57,6 +57,47 @@ public class Pedido {
         System.out.println("[PEDIDO GENÉRICO]");
         System.out.println("Asignando repartidor para pedido de tipo: "
                 + tipoPedido);
-        System.out.println("Pedido asignado a " + nombreRepartidor);
+        System.out.println("-> ASIGNADO a " + nombreRepartidor);
+    }
+
+    /**
+     * Sobrecarga que recibe los datos de un repartidor candidato.
+     */
+    public void asignarRepartidor(Repartidor repartidor) {
+        System.out.println("[PEDIDO GENÉRICO]");
+
+        if (repartidor == null) {
+            System.out.println("-> NO ASIGNADO: el repartidor no es válido.");
+            return;
+        }
+
+        if (!repartidor.isDisponible()) {
+            System.out.println("-> NO ASIGNADO: " + repartidor.getNombre()
+                    + " no tiene disponibilidad inmediata.");
+            return;
+        }
+
+        System.out.println("-> ASIGNADO a " + repartidor.getNombre());
+    }
+
+    /**
+     * Sobrecarga que permite evaluar varios repartidores candidatos.
+     */
+    public void asignarRepartidor(Repartidor[] repartidores) {
+        System.out.println("[PEDIDO GENÉRICO]");
+
+        if (repartidores == null || repartidores.length == 0) {
+            System.out.println("-> NO ASIGNADO: no hay repartidores candidatos.");
+            return;
+        }
+
+        for (Repartidor repartidor : repartidores) {
+            if (repartidor != null && repartidor.isDisponible()) {
+                asignarRepartidor(repartidor);
+                return;
+            }
+        }
+
+        System.out.println("-> NO ASIGNADO: no hay disponibilidad inmediata.");
     }
 }
