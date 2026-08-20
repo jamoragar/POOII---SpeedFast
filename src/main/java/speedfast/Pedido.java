@@ -1,43 +1,54 @@
 package speedfast;
 
 /**
- * Clase base del sistema de pedidos.
- * Representa un pedido genérico de SpeedFast.
+ * Clase abstracta con los datos y comportamientos comunes de un pedido.
  */
-public class Pedido {
+public abstract class Pedido {
 
     private int idPedido;
     private String direccionEntrega;
-    private String tipoPedido;
+    private double distanciaKm;
 
-    public Pedido(int idPedido, String direccionEntrega, String tipoPedido) {
+    public Pedido(int idPedido, String direccionEntrega, double distanciaKm) {
         this.idPedido = idPedido;
         this.direccionEntrega = direccionEntrega;
-        this.tipoPedido = tipoPedido;
+        this.distanciaKm = distanciaKm;
     }
 
     public int getIdPedido() {
         return idPedido;
     }
 
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
-    }
-
     public String getDireccionEntrega() {
         return direccionEntrega;
     }
 
-    public void setDireccionEntrega(String direccionEntrega) {
-        this.direccionEntrega = direccionEntrega;
+    public double getDistanciaKm() {
+        return distanciaKm;
     }
 
-    public String getTipoPedido() {
-        return tipoPedido;
+    /**
+     * Muestra la información común y los factores propios del tipo de pedido.
+     */
+    public void mostrarResumen() {
+        System.out.printf("%s #%03d%n", getTipoEntrega(), idPedido);
+        System.out.println("Dirección: " + direccionEntrega);
+        System.out.println("Distancia: " + formatearDistancia() + " km");
+        System.out.println("Factores: " + getFactoresDuracion());
     }
 
-    public void setTipoPedido(String tipoPedido) {
-        this.tipoPedido = tipoPedido;
+    public abstract int calcularTiempoEntrega();
+
+    protected abstract String getTipoEntrega();
+
+    protected abstract String getFactoresDuracion();
+
+    private String formatearDistancia() {
+        if (distanciaKm == Math.rint(distanciaKm)) {
+            return String.valueOf((int) distanciaKm);
+        }
+
+        return String.valueOf(distanciaKm);
     }
 
     /**
@@ -46,7 +57,7 @@ public class Pedido {
     public void asignarRepartidor() {
         System.out.println("[PEDIDO GENÉRICO]");
         System.out.println("Asignando repartidor para pedido de tipo: "
-                + tipoPedido);
+                + getTipoEntrega());
     }
 
     /**
@@ -56,7 +67,7 @@ public class Pedido {
     public void asignarRepartidor(String nombreRepartidor) {
         System.out.println("[PEDIDO GENÉRICO]");
         System.out.println("Asignando repartidor para pedido de tipo: "
-                + tipoPedido);
+                + getTipoEntrega());
         System.out.println("-> ASIGNADO a " + nombreRepartidor);
     }
 

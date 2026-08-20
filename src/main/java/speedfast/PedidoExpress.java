@@ -5,8 +5,35 @@ package speedfast;
  */
 public class PedidoExpress extends Pedido {
 
-    public PedidoExpress(int idPedido, String direccionEntrega) {
-        super(idPedido, direccionEntrega, "Compra Express");
+    private static final String TIPO_ENTREGA = "PedidoExpress";
+    private static final int TIEMPO_BASE_MINUTOS = 10;
+    private static final double LIMITE_DISTANCIA_KM = 5.0;
+    private static final int RECARGO_MINUTOS = 5;
+
+    public PedidoExpress(int idPedido, String direccionEntrega,
+            double distanciaKm) {
+        super(idPedido, direccionEntrega, distanciaKm);
+    }
+
+    @Override
+    public int calcularTiempoEntrega() {
+        if (getDistanciaKm() > LIMITE_DISTANCIA_KM) {
+            return TIEMPO_BASE_MINUTOS + RECARGO_MINUTOS;
+        }
+
+        return TIEMPO_BASE_MINUTOS;
+    }
+
+    @Override
+    protected String getTipoEntrega() {
+        return TIPO_ENTREGA;
+    }
+
+    @Override
+    protected String getFactoresDuracion() {
+        return TIEMPO_BASE_MINUTOS + " min base + "
+                + RECARGO_MINUTOS + " min si supera "
+                + (int) LIMITE_DISTANCIA_KM + " km";
     }
 
     /**

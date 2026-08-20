@@ -10,11 +10,20 @@ public class Main {
 
         // Sustitución: cada objeto derivado se almacena como Pedido.
         Pedido[] pedidos = {
-            new PedidoComida(1, "Av. Siempre Viva 123"),
-            new PedidoEncomienda(2, "Calle Los Alerces 456",
+            new PedidoComida(1, "Av. Italia 456", 4.0),
+            new PedidoEncomienda(2, "Av. Independencia 123", 6.0,
                     8.0, 30.0, 25.0, 40.0, true),
-            new PedidoExpress(3, "Pasaje El Molino 789")
+            new PedidoExpress(3, "Av. Apoquindo 1500", 7.0)
         };
+
+        System.out.println("\n--- TIEMPOS ESTIMADOS DE ENTREGA ---\n");
+
+        for (Pedido pedido : pedidos) {
+            pedido.mostrarResumen();
+            System.out.println("Tiempo estimado de entrega: "
+                    + pedido.calcularTiempoEntrega() + " minutos");
+            System.out.println();
+        }
 
         System.out.println("\n--- SOBRESCRITURA SIN PARÁMETROS ---\n");
 
@@ -72,7 +81,8 @@ public class Main {
         System.out.println();
 
         Pedido encomiendaMalEmbalada = new PedidoEncomienda(4,
-                "Calle Central 654", 3.0, 20.0, 20.0, 20.0, false);
+                "Calle Central 654", 4.0,
+                3.0, 20.0, 20.0, 20.0, false);
         encomiendaMalEmbalada.asignarRepartidor(candidatosAptos[1]);
         System.out.println();
 

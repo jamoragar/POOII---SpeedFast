@@ -5,6 +5,10 @@ package speedfast;
  */
 public class PedidoEncomienda extends Pedido {
 
+    private static final String TIPO_ENTREGA = "PedidoEncomienda";
+    private static final int TIEMPO_BASE_MINUTOS = 20;
+    private static final double MINUTOS_POR_KM = 1.5;
+
     private double pesoKg;
     private double altoCm;
     private double anchoCm;
@@ -12,14 +16,33 @@ public class PedidoEncomienda extends Pedido {
     private boolean embalajeAdecuado;
 
     public PedidoEncomienda(int idPedido, String direccionEntrega,
+            double distanciaKm,
             double pesoKg, double altoCm, double anchoCm,
             double largoCm, boolean embalajeAdecuado) {
-        super(idPedido, direccionEntrega, "Encomienda");
+        super(idPedido, direccionEntrega, distanciaKm);
         this.pesoKg = pesoKg;
         this.altoCm = altoCm;
         this.anchoCm = anchoCm;
         this.largoCm = largoCm;
         this.embalajeAdecuado = embalajeAdecuado;
+    }
+
+    @Override
+    public int calcularTiempoEntrega() {
+        double tiempo = TIEMPO_BASE_MINUTOS
+                + MINUTOS_POR_KM * getDistanciaKm();
+        return (int) Math.round(tiempo);
+    }
+
+    @Override
+    protected String getTipoEntrega() {
+        return TIPO_ENTREGA;
+    }
+
+    @Override
+    protected String getFactoresDuracion() {
+        return TIEMPO_BASE_MINUTOS + " min base + "
+                + MINUTOS_POR_KM + " min por kilómetro";
     }
 
     public double getPesoKg() {

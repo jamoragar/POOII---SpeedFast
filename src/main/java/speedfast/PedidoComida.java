@@ -5,8 +5,31 @@ package speedfast;
  */
 public class PedidoComida extends Pedido {
 
-    public PedidoComida(int idPedido, String direccionEntrega) {
-        super(idPedido, direccionEntrega, "Comida");
+    private static final String TIPO_ENTREGA = "PedidoComida";
+    private static final int TIEMPO_BASE_MINUTOS = 15;
+    private static final double MINUTOS_POR_KM = 2.0;
+
+    public PedidoComida(int idPedido, String direccionEntrega,
+            double distanciaKm) {
+        super(idPedido, direccionEntrega, distanciaKm);
+    }
+
+    @Override
+    public int calcularTiempoEntrega() {
+        double tiempo = TIEMPO_BASE_MINUTOS
+                + MINUTOS_POR_KM * getDistanciaKm();
+        return (int) Math.round(tiempo);
+    }
+
+    @Override
+    protected String getTipoEntrega() {
+        return TIPO_ENTREGA;
+    }
+
+    @Override
+    protected String getFactoresDuracion() {
+        return TIEMPO_BASE_MINUTOS + " min base + "
+                + (int) MINUTOS_POR_KM + " min por kilómetro";
     }
 
     /**
