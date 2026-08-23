@@ -31,7 +31,7 @@ public abstract class Pedido {
      * Muestra la información común y los factores propios del tipo de pedido.
      */
     public void mostrarResumen() {
-        System.out.printf("%s #%03d%n", getTipoEntrega(), idPedido);
+        System.out.printf("%s #%03d%n", getTipoEntrega(), idPedido); // Se deja el ID con 3 números enteros. Visualmente me gusta así
         System.out.println("Dirección: " + direccionEntrega);
         System.out.println("Distancia: " + formatearDistancia() + " km");
         System.out.println("Factores: " + getFactoresDuracion());

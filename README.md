@@ -102,8 +102,6 @@ javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
 java "-Dfile.encoding=UTF-8" -cp out speedfast.Main
 ```
 
-La salida muestra los tiempos estimados 23, 29 y 15 minutos para los casos referenciales, además de sobrecarga, sustitución polimórfica, asignaciones aceptadas, rechazos justificados y selección efectiva por cercanía.
-
 ---
 
 📌 Proyecto académico semanal | **Duoc UC**
