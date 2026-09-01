@@ -6,9 +6,11 @@ Proyecto de trabajo semanal para la asignatura de **Desarrollo Orientado a Objet
 
 - Javier A. Moraga Rojas
 
-## 🎯 Objetivo
+## 🎯 Objetivo y continuidad
 
 Implementar una clase abstracta y reutilizable para representar pedidos de comida, encomiendas y compras express. Cada subclase calcula su tiempo de entrega con una regla propia y conserva las validaciones de asignación desarrolladas previamente.
+
+La nueva iteración amplía el sistema mediante interfaces para reservar, despachar, cancelar y consultar el historial de entregas. Esta implementación corresponde a la **Actividad Sumativa 1** y se encuentra en la carpeta [`Semana 3/`](./Semana%203/).
 
 ## 🧩 Diseño orientado a objetos
 
@@ -58,6 +60,23 @@ Tiempo estimado de entrega: 15 minutos
 .
 ├── .idea/
 ├── README.md
+├── Semana 3/
+│   ├── README.md
+│   ├── SpeedFast.iml
+│   └── src/
+│       └── main/
+│           └── java/
+│               └── speedfast/
+│                   ├── Cancelable.java
+│                   ├── ControladorDeEnvios.java
+│                   ├── Despachable.java
+│                   ├── Main.java
+│                   ├── Pedido.java
+│                   ├── PedidoComida.java
+│                   ├── PedidoEncomienda.java
+│                   ├── PedidoExpress.java
+│                   ├── Rastreable.java
+│                   └── Repartidor.java
 ├── SpeedFast.iml
 └── src/
     └── main/
