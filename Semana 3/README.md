@@ -184,7 +184,7 @@ Historial de entregas:
 ## 📁 Estructura
 
 ```text
-SpeedFast/
+Semana 3/
 ├── README.md
 ├── SpeedFast.iml
 └── src/
@@ -212,7 +212,7 @@ SpeedFast/
 
 ### Desde IntelliJ IDEA
 
-1. Abrir la carpeta `SpeedFast`.
+1. Abrir la carpeta `Semana 3`.
 2. Configurar el proyecto con JDK 17.
 3. Abrir `src/main/java/speedfast/Main.java`.
 4. Ejecutar el método `main` y revisar la consola.

@@ -1,126 +1,57 @@
-# 🛵 SpeedFast - Desarrollo Orientado a Objetos II
+# Desarrollo Orientado a Objetos II
 
-Proyecto de trabajo semanal para la asignatura de **Desarrollo Orientado a Objetos II**. Esta segunda iteración modela tiempos estimados y asignación de repartidores mediante abstracción, herencia, sobrecarga, sobrescritura y polimorfismo. 📚
+Repositorio de actividades y proyectos desarrollados para la asignatura Desarrollo Orientado a Objetos II de Duoc UC.
 
-## 👥 Integrantes
+Cada carpeta semanal contiene sus instrucciones, proyectos Java y material de apoyo correspondiente. Los proyectos se mantienen separados para conservar la progresion de los contenidos trabajados.
 
-- Javier A. Moraga Rojas
-
-## 🎯 Objetivo y continuidad
-
-Implementar una clase abstracta y reutilizable para representar pedidos de comida, encomiendas y compras express. Cada subclase calcula su tiempo de entrega con una regla propia y conserva las validaciones de asignación desarrolladas previamente.
-
-La nueva iteración amplía el sistema mediante interfaces para reservar, despachar, cancelar y consultar el historial de entregas. Esta implementación corresponde a la **Actividad Sumativa 1** y se encuentra en la carpeta [`Semana 3/`](./Semana%203/).
-
-## 🧩 Diseño orientado a objetos
-
-- **Abstracción**: `Pedido` concentra `idPedido`, `direccionEntrega`, `distanciaKm`, el resumen común y el contrato abstracto de cálculo.
-- **Herencia**: `PedidoComida`, `PedidoEncomienda` y `PedidoExpress` extienden la clase abstracta `Pedido`.
-- **Sobrescritura**: cada tipo redefine `calcularTiempoEntrega()` y personaliza la asignación según sus reglas.
-- **Sobrecarga**: `Pedido` ofrece `asignarRepartidor()`, `asignarRepartidor(String)`, `asignarRepartidor(Repartidor)` y una variante para varios candidatos.
-- **Polimorfismo**: `Main` almacena los pedidos derivados en un arreglo `Pedido[]` y ejecuta tanto el resumen como el cálculo y la asignación sin convertirlos a tipos concretos.
-
-## ⏱️ Cálculo de tiempos
-
-- **PedidoComida**: 15 minutos base + 2 minutos por kilómetro.
-- **PedidoEncomienda**: 20 minutos base + 1,5 minutos por kilómetro, redondeado al entero más cercano.
-- **PedidoExpress**: 10 minutos base; si la distancia supera 5 kilómetros, agrega 5 minutos.
-
-Las decisiones de asignación validan datos reales:
-
-- Comida exige disponibilidad inmediata y mochila térmica.
-- Encomienda exige embalaje adecuado y capacidad suficiente de peso y dimensiones.
-- Express compara las distancias y selecciona al repartidor disponible más cercano.
-
-## 🖥️ Salida referencial
+## Estructura del repositorio
 
 ```text
-PedidoComida #001
-Dirección: Av. Italia 456
-Distancia: 4 km
-Factores: 15 min base + 2 min por kilómetro
-Tiempo estimado de entrega: 23 minutos
-
-PedidoEncomienda #002
-Dirección: Av. Independencia 123
-Distancia: 6 km
-Factores: 20 min base + 1.5 min por kilómetro
-Tiempo estimado de entrega: 29 minutos
-
-PedidoExpress #003
-Dirección: Av. Apoquindo 1500
-Distancia: 7 km
-Factores: 10 min base + 5 min si supera 5 km
-Tiempo estimado de entrega: 15 minutos
+POO II/
+|-- Semana 1/
+|   |-- SistemaNotificaciones/
+|   |-- src/                         # Primera iteracion de SpeedFast
+|   `-- PRY2203_Exp1_S1_...docx
+|-- Semana 2/
+|   |-- SistemaTransporte/
+|   |-- src/                         # Segunda iteracion de SpeedFast
+|   `-- PRY2203_Exp1_S2_...docx
+|-- Semana 3/
+|   |-- BibliotecaSimple/
+|   |-- src/                         # Actividad sumativa: SpeedFast
+|   `-- PRY2203_Exp1_S3_...docx
+|-- Semana 4/
+|   `-- S4_ Instrucciones y pauta de evaluacion.docx
+|-- PRY2203_Exp1_guia_aprendizaje_...docx
+`-- PRY2203_Exp2_guia_de_aprendizaje_...docx
 ```
 
-## 📁 Estructura
+## Proyecto SpeedFast
 
-```text
-.
-├── .idea/
-├── README.md
-├── Semana 3/
-│   ├── README.md
-│   ├── SpeedFast.iml
-│   └── src/
-│       └── main/
-│           └── java/
-│               └── speedfast/
-│                   ├── Cancelable.java
-│                   ├── ControladorDeEnvios.java
-│                   ├── Despachable.java
-│                   ├── Main.java
-│                   ├── Pedido.java
-│                   ├── PedidoComida.java
-│                   ├── PedidoEncomienda.java
-│                   ├── PedidoExpress.java
-│                   ├── Rastreable.java
-│                   └── Repartidor.java
-├── SpeedFast.iml
-└── src/
-    └── main/
-        └── java/
-            └── speedfast/
-                ├── Main.java
-                ├── Pedido.java
-                ├── PedidoComida.java
-                ├── PedidoEncomienda.java
-                ├── PedidoExpress.java
-                └── Repartidor.java
-```
+SpeedFast evoluciona durante las primeras tres semanas. Modela la gestion de pedidos de comida, encomiendas y compras express mediante conceptos de programacion orientada a objetos.
 
-## 🛠️ Software necesario
+- **Semana 1:** herencia, sobrecarga, sobrescritura y polimorfismo para la asignacion de repartidores.
+- **Semana 2:** abstraccion y calculo de tiempos estimados de entrega.
+- **Semana 3:** actividad sumativa que incorpora interfaces para reservar, despachar, cancelar y consultar el historial de entregas.
 
-- **Java Development Kit (JDK) 17 LTS**: requerido para compilar y ejecutar el proyecto.
-- **IntelliJ IDEA Community o Ultimate**: entorno de desarrollo utilizado para abrir y ejecutar el proyecto.
+La documentacion especifica y las instrucciones de ejecucion de cada iteracion se encuentran en el `README.md` de su respectiva carpeta semanal.
 
-## 🚀 Pasos para ejecutar el proyecto
+## Requisitos
 
-### Desde IntelliJ IDEA
+- Java Development Kit (JDK) 17 o superior.
+- IntelliJ IDEA Community o Ultimate, opcional para abrir los proyectos.
 
-1. Abrir IntelliJ IDEA.
-2. Seleccionar **Open** y elegir la carpeta `SpeedFast`.
-3. Confirmar que el SDK del proyecto sea **JDK 17** en **File > Project Structure > Project**.
-4. Abrir `src/main/java/speedfast/Main.java`.
-5. Ejecutar el método `main` con el botón de ejecución o `Shift + F10`.
-6. Revisar la consola para observar los tiempos estimados y la asignación de repartidores.
+## Ejecucion desde la terminal
 
-### Desde la terminal
-
-1. Abrir una terminal en la carpeta raíz del proyecto.
-2. Compilar las clases Java:
+Ubicate en la carpeta de la semana y compila el proyecto SpeedFast:
 
 ```bash
 javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
+java -cp out speedfast.Main
 ```
 
-3. Ejecutar la clase principal:
+Por ejemplo, para ejecutar la actividad de Semana 3, usa `Semana 3` como directorio de trabajo.
 
-```bash
-java "-Dfile.encoding=UTF-8" -cp out speedfast.Main
-```
+## Autor
 
----
-
-📌 Proyecto académico semanal | **Duoc UC**
+- Javier A. Moraga Rojas
