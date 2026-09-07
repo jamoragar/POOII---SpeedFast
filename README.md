@@ -9,21 +9,17 @@ Cada carpeta semanal contiene sus instrucciones, proyectos Java y material de ap
 ```text
 POO II/
 |-- Semana 1/
-|   |-- SistemaNotificaciones/
-|   |-- src/                         # Primera iteracion de SpeedFast
+|   |-- src/                         # Primera iteración de SpeedFast
 |   `-- PRY2203_Exp1_S1_...docx
 |-- Semana 2/
-|   |-- SistemaTransporte/
-|   |-- src/                         # Segunda iteracion de SpeedFast
+|   |-- src/                         # Segunda iteración de SpeedFast
 |   `-- PRY2203_Exp1_S2_...docx
 |-- Semana 3/
-|   |-- BibliotecaSimple/
 |   |-- src/                         # Actividad sumativa: SpeedFast
 |   `-- PRY2203_Exp1_S3_...docx
 |-- Semana 4/
+|   |-- src/                         # Cuarta iteración de SpeedFast
 |   `-- S4_ Instrucciones y pauta de evaluacion.docx
-|-- PRY2203_Exp1_guia_aprendizaje_...docx
-`-- PRY2203_Exp2_guia_de_aprendizaje_...docx
 ```
 
 ## Proyecto SpeedFast
