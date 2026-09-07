@@ -1,3 +1,7 @@
 # Guias de aprendizaje institucionales
 PRY2203_Exp1_guia_aprendizaje_*
 PRY2203_Exp2_guia_de_aprendizaje_*
+
+# Documentos de Word en cualquier subcarpeta
+*.doc
+*.docx
