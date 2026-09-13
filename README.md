@@ -24,16 +24,21 @@ POO II/
 |   |-- README.md
 |   |-- src/                         # Cuarta iteración de SpeedFast
 |   `-- S4_ Instrucciones y pauta de evaluación.docx
+`-- Semana 5/
+    |-- README.md
+    |-- src/                         # Quinta iteración de SpeedFast
+    `-- S5_ Instrucciones y pauta de evaluación.docx
 ```
 
 ## Proyecto SpeedFast
 
-SpeedFast evoluciona durante las cuatro semanas. Modela la gestión de pedidos de comida, encomiendas y compras express mediante conceptos de programación orientada a objetos y concurrencia.
+SpeedFast evoluciona durante las cinco semanas. Modela la gestión de pedidos de comida, encomiendas y compras express mediante conceptos de programación orientada a objetos y concurrencia.
 
 - **Semana 1:** herencia, sobrecarga, sobrescritura y polimorfismo para la asignación de repartidores.
 - **Semana 2:** abstracción y cálculo de tiempos estimados de entrega.
 - **Semana 3:** actividad sumativa que incorpora interfaces para reservar, despachar, cancelar y consultar el historial de entregas.
 - **Semana 4:** actividad formativa que simula entregas en paralelo con `Runnable`, `ExecutorService`, pausas controladas y acceso sincronizado al historial.
+- **Semana 5:** actividad formativa que sincroniza el retiro de pedidos desde una zona de carga compartida para evitar entregas duplicadas.
 
 La documentacion especifica y las instrucciones de ejecucion de cada iteracion se encuentran en el `README.md` de su respectiva carpeta semanal.
 
@@ -51,7 +56,7 @@ javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
 java -cp out speedfast.Main
 ```
 
-Por ejemplo, para ejecutar la actividad de Semana 4, usa `Semana 4` como directorio de trabajo.
+Por ejemplo, para ejecutar la actividad de Semana 5, usa `Semana 5` como directorio de trabajo.
 
 ## Autor
 
