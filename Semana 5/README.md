@@ -59,3 +59,7 @@ El orden de los mensajes puede variar entre ejecuciones porque los tres repartid
 ---
 
 Proyecto académico semanal | Duoc UC
+
+## Autor
+
+- Javier A. Moraga Rojas

@@ -10,23 +10,23 @@ Cada carpeta semanal contiene sus instrucciones, proyectos Java y material de ap
 POO II/
 |-- Semana 1/
 |   |-- README.md
-|   |-- src/                         # Primera iteración de SpeedFast
+|   |-- src/                         # Actividad Formativa 1 de SpeedFast
 |   `-- PRY2203_Exp1_S1_...docx
 |-- Semana 2/
 |   |-- README.md
-|   |-- src/                         # Segunda iteración de SpeedFast
+|   |-- src/                         # Actividad Formativa 2 de SpeedFast
 |   `-- PRY2203_Exp1_S2_...docx
 |-- Semana 3/
 |   |-- README.md
-|   |-- src/                         # Actividad sumativa: SpeedFast
+|   |-- src/                         # Actividad Sumativa 1 de SpeedFast
 |   `-- PRY2203_Exp1_S3_...docx
 |-- Semana 4/
 |   |-- README.md
-|   |-- src/                         # Cuarta iteración de SpeedFast
+|   |-- src/                         # Actividad Formativa 3 de SpeedFast
 |   `-- S4_ Instrucciones y pauta de evaluación.docx
 `-- Semana 5/
     |-- README.md
-    |-- src/                         # Quinta iteración de SpeedFast
+    |-- src/                         # Actividad Sumativa 2 de SpeedFast
     `-- S5_ Instrucciones y pauta de evaluación.docx
 ```
 
@@ -34,11 +34,11 @@ POO II/
 
 SpeedFast evoluciona durante las cinco semanas. Modela la gestión de pedidos de comida, encomiendas y compras express mediante conceptos de programación orientada a objetos y concurrencia.
 
-- **Semana 1:** herencia, sobrecarga, sobrescritura y polimorfismo para la asignación de repartidores.
+- **Semana 1:** actividad formativa que integra herencia, sobrecarga, sobrescritura y polimorfismo para la asignación de repartidores.
 - **Semana 2:** abstracción y cálculo de tiempos estimados de entrega.
 - **Semana 3:** actividad sumativa que incorpora interfaces para reservar, despachar, cancelar y consultar el historial de entregas.
 - **Semana 4:** actividad formativa que simula entregas en paralelo con `Runnable`, `ExecutorService`, pausas controladas y acceso sincronizado al historial.
-- **Semana 5:** actividad formativa que sincroniza el retiro de pedidos desde una zona de carga compartida para evitar entregas duplicadas.
+- **Semana 5:** actividad sumativa que sincroniza el retiro de pedidos desde una zona de carga compartida para evitar entregas duplicadas.
 
 La documentacion especifica y las instrucciones de ejecucion de cada iteracion se encuentran en el `README.md` de su respectiva carpeta semanal.
 
@@ -57,6 +57,10 @@ java -cp out speedfast.Main
 ```
 
 Por ejemplo, para ejecutar la actividad de Semana 5, usa `Semana 5` como directorio de trabajo.
+
+---
+
+Proyecto académico semanal | Duoc UC
 
 ## Autor
 
