@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.VentanaPrincipal">
+  <grid id="principal" layout-manager="GridLayoutManager" row-count="5" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="12" vgap="12" binding="panelPrincipal">
+    <margin top="24" left="24" bottom="24" right="24" />
+    <constraints>
+      <xy x="20" y="20" width="800" height="480" />
+    </constraints>
+    <properties />
+    <border type="none" />
+    <children>
+      <component id="titulo" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties>
+          <text value="SpeedFast — Gestión de entregas" />
+          <horizontalAlignment value="0" />
+          <font size="22" style="1" />
+        </properties>
+      </component>
+      <component id="btnRegistrar" class="javax.swing.JButton" binding="btnRegistrar">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties>
+          <text value="Registrar pedido" />
+        </properties>
+      </component>
+      <component id="btnListar" class="javax.swing.JButton" binding="btnListar">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties>
+          <text value="Listar pedidos" />
+        </properties>
+      </component>
+      <component id="btnAsignar" class="javax.swing.JButton" binding="btnAsignar">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties>
+          <text value="Asignar repartidor / Iniciar entrega" />
+        </properties>
+      </component>
+      <component id="aviso" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false" />
+        </constraints>
+        <properties>
+          <text value="Los datos se guardan solo durante esta sesión." />
+          <horizontalAlignment value="0" />
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
