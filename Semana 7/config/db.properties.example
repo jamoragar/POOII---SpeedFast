@@ -1,0 +1,4 @@
+# Copiar a config/db.properties y usar la misma clave MYSQL_PASSWORD del archivo .env.
+db.url=jdbc:mysql://localhost:3307/speedfast_db
+db.user=speedfast
+db.password=CAMBIAR_CLAVE_SPEEDFAST

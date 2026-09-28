@@ -1,0 +1,6 @@
+/out/
+/config/db.properties
+/.idea/workspace.xml
+/.idea/shelf/
+*.class
+/.env
