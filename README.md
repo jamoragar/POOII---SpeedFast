@@ -57,8 +57,6 @@ POO II/
     |-- src/                         # Persistencia con JDBC y MySQL
     |-- sql/
     |-- lib/
-    |-- compose.yaml
-    |-- ejemplo/                     # Referencia del profesor
     `-- S7_ Instrucciones y pauta de evaluación.docx
 ```
 
