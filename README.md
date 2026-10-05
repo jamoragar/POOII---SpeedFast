@@ -15,6 +15,7 @@ Desarrollar el sistema de gestión de pedidos de SpeedFast mediante programació
 - **Semana 5:** sincroniza el retiro de pedidos desde una zona de carga compartida para evitar entregas duplicadas.
 - **Semana 6:** incorpora ventanas Swing para registrar y listar pedidos, asignar repartidores y simular entregas concurrentes.
 - **Semana 7:** incorpora MySQL y JDBC mediante DAO para guardar y consultar pedidos, repartidores y entregas.
+- **Semana 8:** completa el CRUD de repartidores, pedidos y entregas con interfaces DAO, formularios Swing y relaciones seleccionadas desde MySQL.
 
 ## Sincronización
 
@@ -23,6 +24,8 @@ Las semanas 4 y 5 incorporan ejecución concurrente y acceso sincronizado a los 
 En la Semana 6, `SwingWorker` ejecuta la espera simulada en segundo plano y el hilo de eventos de Swing actualiza los datos y la interfaz. Esto permite realizar entregas en paralelo sin bloquear las ventanas.
 
 En la Semana 7, las operaciones JDBC se ejecutan en segundo plano y la asignación de entregas utiliza transacciones en MySQL.
+
+En la Semana 8, `SwingWorker` ejecuta las operaciones CRUD y actualiza las tablas y listas relacionadas en el hilo de eventos de Swing. El estado del pedido se gestiona manualmente y no se simulan entregas.
 
 ## Estructura
 
@@ -52,14 +55,21 @@ POO II/
 |   |-- README.md
 |   |-- src/                         # Actividad Formativa 4 SpeedFast UI
 |   `-- S6_ Instrucciones y pauta de evaluación.docx
-`-- Semana 7/
+|-- Semana 7/
+|   |-- README.md
+|   |-- src/                         # Persistencia con JDBC y MySQL
+|   |-- sql/
+|   |-- lib/
+|   |-- config/
+|   `-- ejemplo/                     # Referencia del profesor
+`-- Semana 8/
     |-- README.md
-    |-- src/                         # Persistencia con JDBC y MySQL
-    |-- sql/
+    |-- src/                         # CRUD completo y formularios .form
+    |-- sql/speedfast_db.sql          # Esquema reproducible obligatorio
+    |-- config/db.properties.example
     |-- lib/
-    |-- compose.yaml
-    |-- ejemplo/                     # Referencia del profesor
-    `-- S7_ Instrucciones y pauta de evaluación.docx
+    |-- evidencias/
+    `-- Ejemplo profesor/            # Referencia del profesor
 ```
 
 ## Ejecución
@@ -68,10 +78,12 @@ POO II/
 
 1. Abrir la carpeta de la semana correspondiente.
 2. Configurar el proyecto con JDK 17.
-3. Abrir `src/main/java/speedfast/Main.java` para las semanas 1 a 5, o `src/main/Main.java` del módulo `SpeedFast` para las semanas 6 y 7.
+3. Abrir `src/main/java/speedfast/Main.java` para las semanas 1 a 5, o `src/main/Main.java` del módulo `SpeedFast` para las semanas 6, 7 y 8.
 4. Ejecutar el método `main`.
 
-Para las semanas 6 y 7, habilitar el plugin **Swing UI Designer** y compilar los formularios con **Build > Rebuild Project**. Cada `README.md` detalla la configuración necesaria del diseñador. Para Semana 7, iniciar además Docker Desktop y ejecutar `docker compose up -d --wait` desde esa carpeta; el conector JDBC está vinculado en el módulo.
+Para las semanas 6, 7 y 8, habilitar el plugin **Swing UI Designer** y compilar los formularios con **Build > Rebuild Project**. Cada `README.md` detalla la configuración del diseñador. Para las semanas 7 y 8, disponer de un servidor MySQL, ejecutar el SQL de la semana desde MySQL Workbench y completar `config/db.properties` con las credenciales propias. El conector JDBC está incluido en el módulo.
+
+La Semana 8 utiliza tablas en plural y conserva las tablas singulares anteriores. Su [esquema SQL](Semana%208/sql/speedfast_db.sql) debe incluirse en la entrega junto con los fuentes, formularios, configuración, conector y [evidencias](Semana%208/evidencias/README.md). Las instrucciones completas están en el [README de Semana 8](Semana%208/README.md).
 
 ### Desde la terminal
 
@@ -82,7 +94,7 @@ javac -encoding UTF-8 -d out src/main/java/speedfast/*.java
 java -cp out speedfast.Main
 ```
 
-Las semanas 6 y 7 utilizan archivos `.form` que `javac` por sí solo no procesa. Para esas semanas se debe compilar y ejecutar desde IntelliJ IDEA.
+Las semanas 6, 7 y 8 utilizan archivos `.form` que `javac` por sí solo no procesa. Para esas semanas se debe compilar y ejecutar desde IntelliJ IDEA.
 
 La documentación específica y las instrucciones de ejecución de cada proyecto se encuentran en el `README.md` de su respectiva carpeta semanal.
 
