@@ -65,11 +65,11 @@ POO II/
 `-- Semana 8/
     |-- README.md
     |-- src/                         # CRUD completo y formularios .form
+    |-- config/
     |-- sql/speedfast_db.sql          # Esquema reproducible obligatorio
     |-- config/db.properties.example
     |-- lib/
-    |-- evidencias/
-    `-- Ejemplo profesor/            # Referencia del profesor
+    `-- S7_ Instrucciones y pauta de evaluación.docx
 ```
 
 ## Ejecución
