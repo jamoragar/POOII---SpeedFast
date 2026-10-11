@@ -40,7 +40,7 @@ public final class DatabaseConnection {
     public synchronized <T> T consultar(Operacion<T> operacion) throws SQLException {
         return operacion.ejecutar(conectar());
     }
-    /** Ante cualquier fallo, revierte la unidad de negocio entera; no reintenta escrituras. */
+    /** Ante cualquier fallo, revierte la unidad de negocio entera, no reintenta escrituras. */
     public synchronized <T> T transaccion(Operacion<T> operacion) throws SQLException {
         Connection cn=conectar();
         cn.setAutoCommit(false);
