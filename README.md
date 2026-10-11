@@ -1,10 +1,10 @@
-# SpeedFast - Desarrollo Orientado a Objetos II
+# SpeedFast y Biblioteca Escolar - Desarrollo Orientado a Objetos II
 
 Repositorio de actividades semanales para la asignatura Desarrollo Orientado a Objetos II de Duoc UC.
 
 ## Objetivo
 
-Desarrollar el sistema de gestión de pedidos de SpeedFast mediante programación orientada a objetos, concurrencia, interfaces gráficas y persistencia con JDBC. Cada semana mantiene un proyecto independiente para conservar la progresión de los contenidos trabajados.
+Desarrollar el sistema de gestión de pedidos de SpeedFast mediante programación orientada a objetos, concurrencia, interfaces gráficas y persistencia con JDBC. La Semana 9 integra estos aprendizajes en una Biblioteca Escolar. Cada semana mantiene un proyecto independiente para conservar la progresión de los contenidos trabajados.
 
 ## Diseño
 
@@ -17,6 +17,8 @@ Desarrollar el sistema de gestión de pedidos de SpeedFast mediante programació
 - **Semana 7:** incorpora MySQL y JDBC mediante DAO para guardar y consultar pedidos, repartidores y entregas.
 - **Semana 8:** completa el CRUD de repartidores, pedidos y entregas con interfaces DAO, formularios Swing y relaciones seleccionadas desde MySQL.
 
+- **Semana 9:** implementa la Biblioteca Escolar con autenticación por roles, CRUD, préstamos, devoluciones, reportes y transacciones sincronizadas.
+
 ## Sincronización
 
 Las semanas 4 y 5 incorporan ejecución concurrente y acceso sincronizado a los recursos compartidos. Esto permite que varios repartidores procesen pedidos sin duplicar las entregas.
@@ -26,6 +28,8 @@ En la Semana 6, `SwingWorker` ejecuta la espera simulada en segundo plano y el h
 En la Semana 7, las operaciones JDBC se ejecutan en segundo plano y la asignación de entregas utiliza transacciones en MySQL.
 
 En la Semana 8, `SwingWorker` ejecuta las operaciones CRUD y actualiza las tablas y listas relacionadas en el hilo de eventos de Swing. El estado del pedido se gestiona manualmente y no se simulan entregas.
+
+La Semana 9 combina `SwingWorker`, métodos `synchronized` y bloqueos de filas en MySQL para mantener consistente el stock dentro y fuera de un mismo proceso.
 
 ## Estructura
 
@@ -62,14 +66,24 @@ POO II/
 |   |-- lib/
 |   |-- config/
 |   `-- ejemplo/                     # Referencia del profesor
-`-- Semana 8/
+|-- Semana 8/
+|   |-- README.md
+|   |-- src/                         # CRUD completo y formularios .form
+|   |-- config/
+|   |-- sql/speedfast_db.sql          # Esquema reproducible obligatorio
+|   |-- config/db.properties.example
+|   |-- lib/
+|   `-- S7_ Instrucciones y pauta de evaluación.docx
+`-- Semana 9/
     |-- README.md
-    |-- src/                         # CRUD completo y formularios .form
-    |-- config/
-    |-- sql/speedfast_db.sql          # Esquema reproducible obligatorio
+    |-- GUION_VIDEO.md
+    |-- src/                         # Biblioteca Escolar y ocho formularios
+    |-- sql/                         # Creación, poblamiento y ampliación
     |-- config/db.properties.example
     |-- lib/
-    `-- S7_ Instrucciones y pauta de evaluación.docx
+    |-- BibliotecaEscolar.jar
+    |-- evidencias/
+    `-- EFT/
 ```
 
 ## Ejecución
@@ -83,7 +97,9 @@ POO II/
 
 Para las semanas 6, 7 y 8, habilitar el plugin **Swing UI Designer** y compilar los formularios con **Build > Rebuild Project**. Cada `README.md` detalla la configuración del diseñador. Para las semanas 7 y 8, disponer de un servidor MySQL, ejecutar el SQL de la semana desde MySQL Workbench y completar `config/db.properties` con las credenciales propias. El conector JDBC está incluido en el módulo.
 
-La Semana 8 utiliza tablas en plural y conserva las tablas singulares anteriores. Su [esquema SQL](Semana%208/sql/speedfast_db.sql) debe incluirse en la entrega junto con los fuentes, formularios, configuración, conector y [evidencias](Semana%208/evidencias/README.md). Las instrucciones completas están en el [README de Semana 8](Semana%208/README.md).
+La Semana 8 utiliza tablas en plural y conserva las tablas singulares anteriores. Su [esquema SQL](Semana%208/sql/speedfast_db.sql) debe incluirse en la entrega junto con los fuentes, formularios, configuración, conector y evidencias. Las instrucciones completas están en el [README de Semana 8](Semana%208/README.md).
+
+La [Semana 9](Semana%209/README.md) usa el módulo `BibliotecaEscolar` y `src/main/Main.java`. Sus [tres scripts SQL](Semana%209/sql/) crean la base independiente `biblioteca`; deben incluirse en la entrega junto al [guion del video](Semana%209/GUION_VIDEO.md), el JAR y las [evidencias](Semana%209/evidencias/README.md). La documentación explica la instalación desde MySQL Workbench y las cuentas oficiales.
 
 ### Desde la terminal
 
@@ -95,6 +111,8 @@ java -cp out speedfast.Main
 ```
 
 Las semanas 6, 7 y 8 utilizan archivos `.form` que `javac` por sí solo no procesa. Para esas semanas se debe compilar y ejecutar desde IntelliJ IDEA.
+
+La Semana 9 incluye `BibliotecaEscolar.jar`, que se ejecuta con `java -jar BibliotecaEscolar.jar` después de configurar MySQL. Para regenerarlo desde IntelliJ, usar **Build > Rebuild Project** y luego **Build > Build Artifacts > BibliotecaEscolar > Build**.
 
 La documentación específica y las instrucciones de ejecución de cada proyecto se encuentran en el `README.md` de su respectiva carpeta semanal.
 
